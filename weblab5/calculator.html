@@ -1,0 +1,66 @@
+<html> 
+<head>
+<title>Calculator</title>
+<style type="text/css">
+    input{
+        padding:30px;
+        font-size: 20px;
+    }
+    #result{
+        background-color: lightgray;
+    }
+    .btn{
+        background-color: lightgray;
+        color: black;
+    }
+</style> 
+</head>
+<body>
+
+<center>
+    <table border="0"> 
+         <tr> 
+            <td colspan="4"><input type="text" id="result" readonly/><input type="button" value="Clear" onclick="empty()"/></td>
+         </tr> 
+         <tr>
+            <td><input class="btn" type="button" value="1" onclick="show('1')"/> </td> 
+            <td><input class="btn" type="button" value="2" onclick="show('2')"/> </td> 
+            <td><input class="btn" type="button" value="3" onclick="show('3')"/> </td> 
+            <td><input class="btn" type="button" value="/" onclick="show('/')"/> </td> 
+         </tr> 
+         <tr> 
+            <td><input class="btn" type="button" value="4" onclick="show('4')"/> </td> 
+            <td><input class="btn" type="button" value="5" onclick="show('5')"/> </td> 
+            <td><input class="btn" type="button" value="6" onclick="show('6')"/> </td> 
+            <td><input class="btn" type="button" value="-" onclick="show('-')"/> </td> 
+         </tr> 
+         <tr> 
+            <td><input class="btn" type="button" value="7" onclick="show('7')"/> </td> 
+            <td><input class="btn" type="button" value="8" onclick="show('8')"/> </td> 
+            <td><input class="btn" type="button" value="9" onclick="show('9')"/> </td> 
+            <td><input class="btn" type="button" value="+" onclick="show('+')"/> </td> 
+         </tr> 
+         <tr> 
+            <td><input class="btn" type="button" value="." onclick="show('.')"/> </td> 
+            <td><input class="btn" type="button" value="0" onclick="show('0')"/> </td> 
+            <td><input class="btn" type="button" value="=" onclick="calculate()"/> </td> 
+            <td><input class="btn" type="button" value="*" onclick="show('*')"/> </td> 
+         </tr>
+      </table> 
+  </center>
+<script>
+    function show(value)
+    { 
+        document.getElementById("result").value+=value 
+    }
+    function empty()
+    { 
+        document.getElementById("result").value = ""; 
+    }
+    function calculate(){
+        var result = eval(document.getElementById("result").value);
+        document.getElementById("result").value = result;
+    }
+</script>
+</body>
+</html>
